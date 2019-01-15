@@ -1,0 +1,306 @@
+<resources>
+    <string name="app_name">RealEstateMaster</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="Filter">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="search">Search</string>
+    <string name="recent">Recent</string>
+    <string name="setting">Setting</string>
+    <string name="favourites">Favourites</string>
+    <string-array name="minBedrooms">
+        <item>1+</item>
+        <item>2+</item>
+        <item>3+</item>
+        <item>4+</item>
+        <item>5+</item>
+        <item>6+</item>
+        <item>7+</item>
+        <item>8+</item>
+        <item>9+</item>
+        <item>10+ </item>
+    </string-array>
+    <string-array name="minPrice">
+        <item>No min</item>
+        <item>10,000</item>
+        <item>20,000</item>
+        <item>30,000</item>
+        <item>40,000</item>
+        <item>50,000</item>
+        <item>60,000</item>
+        <item>70,000</item>
+        <item>80,000</item>
+        <item>90,000</item>
+        <item>100,000</item>
+        <item>110,000</item>
+        <item>120,000</item>
+        <item>130,000</item>
+        <item>140,000</item>
+        <item>150,000</item>
+        <item>160,000</item>
+        <item>170,000</item>
+        <item>180,000</item>
+        <item>190,000</item>
+        <item>200,000</item>
+        <item>210,000</item>
+        <item>220,000</item>
+        <item>230,000</item>
+        <item>240,000</item>
+        <item>250,000</item>
+        <item>260,000</item>
+        <item>270,000</item>
+        <item>280,000</item>
+        <item>290,000</item>
+        <item>310,000</item>
+        <item>320,000</item>
+        <item>330,000</item>
+        <item>340,000</item>
+        <item>350,000</item>
+        <item>360,000</item>
+        <item>370,000</item>
+        <item>380,000</item>
+        <item>390,000</item>
+        <item>400,000</item>
+        <item>410,000</item>
+        <item>420,000</item>
+        <item>430,000</item>
+        <item>440,000</item>
+        <item>450,000</item>
+        <item>460,000</item>
+        <item>470,000</item>
+        <item>480,000</item>
+        <item>490,000</item>
+        <item>500,000</item>
+        <item>510,000</item>
+        <item>520,000</item>
+        <item>530,000</item>
+        <item>540,000</item>
+        <item>550,000</item>
+        <item>560,000</item>
+        <item>570,000</item>
+        <item>580,000</item>
+        <item>590,000</item>
+        <item>600,000</item>
+        <item>610,000</item>
+        <item>620,000</item>
+        <item>630,000</item>
+        <item>640,000</item>
+        <item>650,000</item>
+        <item>660,000</item>
+        <item>670,000</item>
+        <item>680,000</item>
+        <item>690,000</item>
+        <item>700,000</item>
+        <item>710,000</item>
+        <item>720,000</item>
+        <item>730,000</item>
+        <item>740,000</item>
+        <item>750,000</item>
+        <item>760,000</item>
+        <item>770,000</item>
+        <item>780,000</item>
+        <item>790,000</item>
+        <item>800,000</item>
+        <item>810,000</item>
+        <item>820,000</item>
+        <item>830,000</item>
+        <item>840,000</item>
+        <item>850,000</item>
+        <item>860,000</item>
+        <item>870,000</item>
+        <item>880,000</item>
+        <item>890,000</item>
+        <item>900,000</item>
+        <item>910,000</item>
+        <item>920,000</item>
+        <item>930,000</item>
+        <item>940,000</item>
+        <item>950,000</item>
+        <item>960,000</item>
+        <item>970,000</item>
+        <item>980,000</item>
+        <item>990,000</item>
+        <item>1,000,000</item>
+        <item>1,500</item>
+        <item>1,200,000</item>
+        <item>2,000,000</item>
+        <item>2,500,000</item>
+        <item>3,000,000</item>
+        <item>3,500,000</item>
+        <item>4,000,000</item>
+        <item>4,500,000</item>
+        <item>5,000,000</item>
+        <item>5,500,000</item>
+
+    </string-array>
+    <string-array name="maxPrice">
+        <item>No max</item>
+        <item>10,000</item>
+        <item>20,000</item>
+        <item>30,000</item>
+        <item>40,000</item>
+        <item>50,000</item>
+        <item>60,000</item>
+        <item>70,000</item>
+        <item>80,000</item>
+        <item>90,000</item>
+        <item>100,000</item>
+        <item>110,000</item>
+        <item>120,000</item>
+        <item>130,000</item>
+        <item>140,000</item>
+        <item>150,000</item>
+        <item>160,000</item>
+        <item>170,000</item>
+        <item>180,000</item>
+        <item>190,000</item>
+        <item>200,000</item>
+        <item>210,000</item>
+        <item>220,000</item>
+        <item>230,000</item>
+        <item>240,000</item>
+        <item>250,000</item>
+        <item>260,000</item>
+        <item>270,000</item>
+        <item>280,000</item>
+        <item>290,000</item>
+        <item>310,000</item>
+        <item>320,000</item>
+        <item>330,000</item>
+        <item>340,000</item>
+        <item>350,000</item>
+        <item>360,000</item>
+        <item>370,000</item>
+        <item>380,000</item>
+        <item>390,000</item>
+        <item>400,000</item>
+        <item>410,000</item>
+        <item>420,000</item>
+        <item>430,000</item>
+        <item>440,000</item>
+        <item>450,000</item>
+        <item>460,000</item>
+        <item>470,000</item>
+        <item>480,000</item>
+        <item>490,000</item>
+        <item>500,000</item>
+        <item>510,000</item>
+        <item>520,000</item>
+        <item>530,000</item>
+        <item>540,000</item>
+        <item>550,000</item>
+        <item>560,000</item>
+        <item>570,000</item>
+        <item>580,000</item>
+        <item>590,000</item>
+        <item>600,000</item>
+        <item>610,000</item>
+        <item>620,000</item>
+        <item>630,000</item>
+        <item>640,000</item>
+        <item>650,000</item>
+        <item>660,000</item>
+        <item>670,000</item>
+        <item>680,000</item>
+        <item>690,000</item>
+        <item>700,000</item>
+        <item>710,000</item>
+        <item>720,000</item>
+        <item>730,000</item>
+        <item>740,000</item>
+        <item>750,000</item>
+        <item>760,000</item>
+        <item>770,000</item>
+        <item>780,000</item>
+        <item>790,000</item>
+        <item>800,000</item>
+        <item>810,000</item>
+        <item>820,000</item>
+        <item>830,000</item>
+        <item>840,000</item>
+        <item>850,000</item>
+        <item>860,000</item>
+        <item>870,000</item>
+        <item>880,000</item>
+        <item>890,000</item>
+        <item>900,000</item>
+        <item>910,000</item>
+        <item>920,000</item>
+        <item>930,000</item>
+        <item>940,000</item>
+        <item>950,000</item>
+        <item>960,000</item>
+        <item>970,000</item>
+        <item>980,000</item>
+        <item>990,000</item>
+        <item>1,000,000</item>
+        <item>1,500</item>
+        <item>1,200,000</item>
+        <item>2,000,000</item>
+        <item>2,500,000</item>
+        <item>3,000,000</item>
+        <item>3,500,000</item>
+        <item>4,000,000</item>
+        <item>4,500,000</item>
+        <item>5,000,000</item>
+        <item>5,500,000</item>
+
+    </string-array>
+    <string-array name="distanceFromLocation">
+        <item>This area only</item>
+        <item>Within 0.25 mile</item>
+        <item>Within 0.5 mile</item>
+        <item>Within 1 mile</item>
+        <item>Within 3 miles</item>
+        <item>Within 5 miles</item>
+        <item>Within 10 miles</item>
+        <item>Within 15 miles</item>
+        <item>Within 20 miles</item>
+        <item>Within 25 miles</item>
+        <item>Within 30 miles</item>
+        <item>Within 35 miles</item>
+        <item>Within 40 miles</item>
+
+    </string-array>
+    <string-array name="sortBy">
+        <item>Price</item>
+        <item>Age</item>
+
+    </string-array>
+    <string-array name="propertyType">
+        <item>Show all</item>
+        <item>Houses</item>
+        <item>Flats</item>
+
+    </string-array>
+    <string name="title_activity_main22">Main22Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="sms_request">I am interested in the property you posted.Please contact me if it is still available.</string>
+    <string name="default_search_string"><![CDATA[http://api.zoopla.co.uk/api/v1/property_listings.json?country=&county=&street=&postcode=&area=oxford&maximum_price=&minimum_price=&minimum_beds=1&maximum_beds=&property_type=&new_homes=false&keywords=&listing_id=&radius=&order_by=price&listing_status=sale&page_size=30&page_number=&chain_free=true&include_sold=null&api_key=w88jr4f54ba5e4pd4xmfy8ud]]></string>
+    <string name="title_activity_navigaition_drawer">NavigaitionDrawerActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email">Email Id</string>
+    <string name="passowrd">Password</string>
+    <string name="login">LOGIN</string>
+    <string name="show_pwd">Show Password</string>
+    <string name="hide_pwd">Hide Password</string>
+    <string name="forgot">Forgot password?</string>
+    <string name="closebutton">Close Button for Activity</string>
+    <string name="newUser">Not a Member yet? Sign Up here.</string>
+    <string name="fullName">Full Name</string>
+    <string name="mobileNumber">Mobile Number</string>
+    <string name="location">Location</string>
+    <string name="confirmPassword">Confirm Password</string>
+    <string name="terms_conditions">By clicking SignUp you agree all the Terms and Conditions.</string>
+    <string name="signUp">SIGN UP</string>
+    <string name="already_user">Already have Account? Login here.</string>
+    <string name="registered_emailid">Please enter your Registered Email Id below:</string>
+    <string name="submit">SUBMIT</string>
+    <string name="back">BACK</string>
+
+</resources>

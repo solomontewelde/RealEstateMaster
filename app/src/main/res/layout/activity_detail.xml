@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+                name="detail"
+                type="com.example.android.realestatemaster.HelperClasses.PropertyDataBinder"
+            />
+
+    </data>
+<android.support.design.widget.CoordinatorLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.realestatemaster.activities.DetailActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        >
+        <android.support.design.widget.CollapsingToolbarLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleTextAppearance="@android:color/transparent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_collapseMode="parallax"/>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:title="Property detail"
+                />
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:nestedScrollingEnabled="true">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardElevation="1dp"
+                app:cardUseCompatPadding="true"
+                app:cardBackgroundColor="@color/cardview_shadow_end_color"
+            >
+
+                <TextView
+                    android:id="@+id/price_detail_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:elevation="0dp"
+                    android:fontFamily="@font/roboto_slab"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:padding="12dp"
+                    android:text="@{detail.price}"
+                    android:textColor="@android:color/holo_green_light"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    tools:text="700,000" />
+            </android.support.v7.widget.CardView>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="4dp"
+                android:elevation="5dp"
+                android:focusedByDefault="true"
+                android:focusableInTouchMode="true"
+                android:descendantFocusability="beforeDescendants"
+               >
+
+                <TextView
+                    android:id="@+id/beds_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="4dp"
+                    android:drawableTop="@drawable/bed"
+                    android:drawableTint="@color/secondary_text"
+                    android:drawablePadding="5dp"
+                    android:fontFamily="@font/roboto_slab"
+                    android:text="@{detail.bedRooms}"
+                    android:textColor="@color/bb_darkBackgroundColor"
+                    android:gravity="center_vertical"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginLeft="24dp"
+                    tools:text="4 Bedrooms"/>
+
+                <TextView
+                    android:id="@+id/bath_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:drawableTop="@drawable/bath"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"
+                    android:fontFamily="@font/roboto_slab"
+                    android:text="@{detail.bathRooms}"
+                    android:textColor="@color/bb_darkBackgroundColor"
+                    android:textSize="14sp"
+                    android:drawableTint="@color/primary_text"
+                    app:layout_constraintEnd_toStartOf="@+id/area_detail"
+                    app:layout_constraintStart_toEndOf="@+id/beds_detail"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginRight="24dp"
+                    android:layout_marginLeft="16dp"
+                    tools:text="3 Bathrooms"/>
+
+                <TextView
+                    android:id="@+id/area_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="4dp"
+                    android:drawableTop="@drawable/area"
+                    android:drawableTint="@color/primary_text"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"
+                    android:fontFamily="@font/roboto_slab"
+                    android:text="@{detail.area}"
+                    android:textColor="@color/bb_darkBackgroundColor"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginRight="16dp"
+                    tools:text="2000 sqft"/>
+
+                <TextView
+                    android:id="@+id/address_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/roboto_slab"
+                    android:text="@{detail.address}"
+                    android:textColor="@color/bb_darkBackgroundColor"
+                    android:textSize="14sp"
+                    android:gravity="center_horizontal"
+                    app:layout_constraintBottom_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.56"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bath_detail"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:text="Manchester, Ca" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/address_detail"
+                  >
+
+                    <Button
+                        android:id="@+id/email_button_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:background="@drawable/rounded_corner"
+                        android:drawableLeft="@drawable/ic_email_black_24dp"
+                        android:drawableTint="@color/primary_dark"
+                        android:text="Email"
+                        android:textColor="@color/accent"
+                        android:onClick="emailAgent"
+                        android:layout_weight="1"/>
+
+                    <Button
+                        android:id="@+id/call_button_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:background="@drawable/rounded_corner"
+                        android:drawableLeft="@drawable/ic_call_black_24dp"
+                        android:drawableTint="@color/primary_dark"
+                        android:text="Call"
+                        android:textColor="@color/accent"
+                        android:onClick="callAgent"
+                        android:layout_weight="1"/>
+
+                    <Button
+                        android:id="@+id/sms_button_detail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:textColor="@color/accent"
+                        android:background="@drawable/rounded_corner"
+                        android:drawableLeft="@drawable/ic_sms_black_24dp"
+                        android:drawableTint="@color/primary_dark"
+                        android:text="sms"
+                        android:onClick="smsAgent"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+            </android.support.constraint.ConstraintLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:fontFamily="serif"
+                android:text="Description"
+                android:textColor="@color/primary_text"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="4dp"
+                android:background="@color/divider"/>
+             <com.ms.square.android.expandabletextview.ExpandableTextView
+
+      xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+      android:id="@+id/expand_text_view"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      expandableTextView:maxCollapsedLines="4"
+      expandableTextView:animDuration="200">
+                 <TextView
+                     android:id="@id/expandable_text"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginLeft="16dp"
+                     android:layout_marginRight="16dp"
+                     android:fontFamily="serif"
+                     android:text="@{detail.details}"
+                     android:maxLines="10"
+                     android:textColor="@color/secondary_text"
+                     android:ellipsize="end"/>
+      <ImageButton
+          android:id="@id/expand_collapse"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:padding="16dp"
+          android:layout_gravity="right|bottom"
+          android:background="@android:color/transparent"/>
+  </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="8dp">
+                <ProgressBar
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/progress_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    />
+<android.support.v7.widget.RecyclerView
+    android:layout_marginTop="32dp"
+    android:id="@+id/detail_recycler_view"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:background="#e5ffff"
+    android:layout_gravity="center_horizontal"
+  android:nestedScrollingEnabled="true">
+
+</android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="6dp"
+        android:src="@drawable/ic_favourite"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_anchor="@id/appbar_layout"
+        app:layout_anchorGravity="bottom|right|end"
+        app:pressedTranslationZ="12dp"
+        />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="64dp"
+        android:elevation="6dp"
+       android:layout_marginLeft="4dp"
+        android:src="@drawable/ic_share"
+        app:layout_anchor="@id/appbar_layout"
+        app:layout_anchorGravity="bottom|right|center|end"
+        app:pressedTranslationZ="12dp"
+        android:onClick="share"/>
+
+</android.support.design.widget.CoordinatorLayout>
+</layout>

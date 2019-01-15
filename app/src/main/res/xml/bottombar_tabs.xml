@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <tab
+        id="@+id/search_navig_button"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="@string/search"
+        ActiveColor="#2F4F4F"
+        />
+    <tab
+        id="@+id/recent_navig_button"
+        android:icon="@drawable/ic_history_black_24dp"
+        android:title="@string/recent"
+
+
+         />
+    <tab
+        id="@+id/favourite_navig_button"
+        android:icon="@drawable/ic_favorite_black_24dp"
+        android:title="@string/favourites"
+
+       />
+    <tab
+        id="@+id/setting_navig_button"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="@string/setting"
+        />
+    <tab
+        id="@+id/user_account_navig_button"
+        android:icon="@drawable/ic_account_circle_black_24dp"
+        android:title="Account"
+
+
+        />
+
+</tabs>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/search_parentold">
+
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/search_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+          >
+
+                <!-- Your loooooong scrolling content here. -->
+
+        </android.support.v4.widget.NestedScrollView>
+
+        <com.roughike.bottombar.BottomBar
+            android:id="@+id/bottomBar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:showDividers="middle"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:background="#ffffff"
+            app:bb_tabXmlResource="@xml/bottombar_tabs"
+            app:bb_behavior="shifting|shy"
+            app:bb_inActiveTabColor="#1F4F4F"
+            app:bb_activeTabColor="@color/primary"
+            app:bb_titleTextAppearance="@color/primary"
+            app:bb_showShadow="true"
+
+
+            />
+
+</android.support.design.widget.CoordinatorLayout>
