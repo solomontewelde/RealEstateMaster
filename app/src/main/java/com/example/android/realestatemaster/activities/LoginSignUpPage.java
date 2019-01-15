@@ -65,7 +65,7 @@ public class LoginSignUpPage extends AppCompatActivity {
             });
         }
         else{
-            Utilities.showToast(this,"Empty fields");
+            Utilities.showToast(this,"Empty field");
         }
 
 
