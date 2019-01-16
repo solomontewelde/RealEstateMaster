@@ -76,4 +76,14 @@ public class LoginSignUpPage extends AppCompatActivity {
         super.onStart();
         firebaseAuth.addAuthStateListener(authStateListener);
     }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        firebaseAuth.signOut();
+    }
+
+    public void gotoSignupPage(View view) {
+        startActivity(new Intent(getApplicationContext(),SignUpActivity.class));
+    }
 }

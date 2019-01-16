@@ -21,15 +21,14 @@
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/title_activity_search"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".activities.LoginSignUpPage"
+            android:label="Login"
             android:theme="@style/AppTheme">
-
-        </activity>
-
-        <activity android:name=".activities.LoginSignUpPage"
-        android:label="Login"
-        android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -49,8 +48,8 @@
         <activity
             android:name=".activities.NavigaitionDrawerActivity"
             android:label="@string/title_activity_navigaition_drawer"
-            android:theme="@style/AppTheme"></activity>
-
+            android:theme="@style/AppTheme" />
+        <activity android:name=".activities.SignUpActivity"></activity>
     </application>
 
 </manifest>
