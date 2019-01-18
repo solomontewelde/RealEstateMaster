@@ -2,6 +2,7 @@ package com.example.android.realestatemaster.HelperClasses;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -74,11 +75,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.addressTv.setText(data.getListing().get(position).getDisplayableAddress());
         holder.datePostedTv.setText(data.getListing().get(position).getFirstPublishedDate());
         holder.favouritesFab.setImageResource(R.drawable.ic_favorite_border_black_24dp);
-        SharedPreferences sharedPreferences = context.getSharedPreferences("LIKED_PROPERTIES",0);
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         String listingId = data.getListing().get(position).getListingId();
-        String modifiedSearchString = searchString+"&listing_id="+listingId;
-        if (sharedPreferences.contains(listingId));
-        if (sharedPreferences.getString(listingId,"").equals(modifiedSearchString)){
+        if (sharedPreferences.contains(listingId)){
             holder.favouritesFab.setImageResource(R.drawable.ic_favorite_black_24dp);
         }
         else {
@@ -108,7 +107,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         UniversalImageLoader.setImage(imageUrl, imageView, null, "");
     }
 
-    public void toggleFavourites(ProportyJsonModel data, int position, SharedPreferences.Editor editor, SharedPreferences sharedPreferences, ViewHolder holder) {
+/*    public void toggleFavourites(ProportyJsonModel data, int position, SharedPreferences.Editor editor, SharedPreferences sharedPreferences, ViewHolder holder) {
         String propertyId = data.getListing().get(position).getListingId();
         if (!sharedPreferences.contains(propertyId)) {
             holder.favouritesFab.setImageResource(R.drawable.ic_favorite_black_24dp);
@@ -123,7 +122,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         }
 
         Log.i("Liked", liked.getAll().toString());
-    }
+    }*/
 
     public interface OnItemClickListener {
         void onItemClick(int clickedItemIndex);

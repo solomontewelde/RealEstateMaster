@@ -9,7 +9,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:id="@+id/parent_layout_id"
-    tools:context=".activities.ResultsActivity"
+    tools:context=".activities.SearchResultsActivity"
     android:background="#e5ffff">
 <FrameLayout
     android:layout_width="match_parent"

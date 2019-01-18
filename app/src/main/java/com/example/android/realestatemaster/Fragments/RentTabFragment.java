@@ -17,8 +17,8 @@ import android.widget.EditText;
         import android.widget.Spinner;
         import android.widget.Toast;
         import com.example.android.realestatemaster.R;
-        import com.example.android.realestatemaster.activities.ResultsActivity;
-        import com.example.android.realestatemaster.utils.QuerryBuilder;
+        import com.example.android.realestatemaster.activities.SearchResultsActivity;
+        import com.example.android.realestatemaster.utils.SearchQuerryBuilder;
 
 
 public class RentTabFragment extends Fragment implements AdapterView.OnItemSelectedListener {
@@ -27,13 +27,13 @@ public class RentTabFragment extends Fragment implements AdapterView.OnItemSelec
     private SearchView searchView;
     private Spinner minPriceSp, maxPriceSp, bedroomsSp, distanceSp, sortBySp, propertyTypeSp;
     private EditText keywordsEt;
-    private QuerryBuilder querryString;
+    private SearchQuerryBuilder querryString;
     private CheckBox sharedAccomodation, letAgreed;
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View  view= inflater.inflate(R.layout.fragment_rent_tab, container, false);
 
-        querryString = new QuerryBuilder();
+        querryString = new SearchQuerryBuilder();
         initializeComponents(view);
         bindSpinnerData();
 
@@ -149,7 +149,7 @@ public class RentTabFragment extends Fragment implements AdapterView.OnItemSelec
                     querryString.setSharedAccomodation(String.valueOf(sharedAccomodation.isChecked()));
                     querryString.setLetAgreed(String.valueOf(sharedAccomodation.isChecked()));
                     querryString.setKeywords( keywordsEt.getText().toString());String requestString = querryString.getQuerryString();
-                    Intent intent = new Intent(getActivity().getApplicationContext(), ResultsActivity.class);
+                    Intent intent = new Intent(getActivity().getApplicationContext(), SearchResultsActivity.class);
                     intent.putExtra(Intent.EXTRA_TEXT, requestString);
                     startActivity(intent);
                     Log.d("ququ", requestString);

@@ -15,8 +15,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import okhttp3.internal.Util;
-
 public class SignUpActivity extends AppCompatActivity {
 private EditText emailEt, passwordEt;
 private FirebaseAuth firebaseAuth;
@@ -53,7 +51,7 @@ private FirebaseAuth firebaseAuth;
                     Utilities.showToast(getApplicationContext(),"Error signing up");
                 }
                 else{
-                    startActivity(new Intent(getApplicationContext(),LoginSignUpPage.class));
+                    startActivity(new Intent(getApplicationContext(),LoginActivity.class));
                     //finish();
 
                 }
@@ -62,7 +60,7 @@ private FirebaseAuth firebaseAuth;
     }
 
     public void gotoLoginPage(View view) {
-        startActivity(new Intent(getApplicationContext(),LoginSignUpPage.class));
+        startActivity(new Intent(getApplicationContext(),LoginActivity.class));
         finish();
     }
 }

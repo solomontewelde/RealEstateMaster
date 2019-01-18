@@ -1,17 +1,13 @@
 package com.example.android.realestatemaster.Fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import com.example.android.realestatemaster.R;
-import com.example.android.realestatemaster.activities.MainActivity;
-import com.example.android.realestatemaster.activities.ResultsActivity;
 
 /**
  * Created by 100043392 on 10-Apr-18.

@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
  * Created by 100043392 on 13-Jan-19.
  */
 
-public class LoginSignUpPage extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     private EditText emailEt,passwordEt;
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener authStateListener;

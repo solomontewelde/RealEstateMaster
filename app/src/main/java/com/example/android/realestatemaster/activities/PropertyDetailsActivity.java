@@ -42,7 +42,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class DetailActivity extends AppCompatActivity implements RecyclerViewAdapterSmall.OnItemClickListener {
+public class PropertyDetailsActivity extends AppCompatActivity implements RecyclerViewAdapterSmall.OnItemClickListener {
     private static final int MY_PERMISSIONS_REQUEST_CALL_PHONE = 1;
     private Toolbar toolbar;
     private RecyclerViewAdapterSmall recyclerViewAdapter;
@@ -94,9 +94,10 @@ public class DetailActivity extends AppCompatActivity implements RecyclerViewAda
     @Override
     public void onItemClick(int clickedItemIndex) {
 
-         Intent intent = new Intent(this, DetailActivity.class);
+         Intent intent = new Intent(this, PropertyDetailsActivity.class);
          intent.putExtra("LISTING_DETAILS", propertyData.getListing().get(clickedItemIndex));
          startActivity(intent);
+         finish();
     }
 
     public void share(View view) {
@@ -153,7 +154,7 @@ public class DetailActivity extends AppCompatActivity implements RecyclerViewAda
 
             recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
             recyclerViewAdapter = new RecyclerViewAdapterSmall(getApplicationContext(), propertyData);
-            recyclerViewAdapter.setOnItemClickListener(DetailActivity.this);
+            recyclerViewAdapter.setOnItemClickListener(PropertyDetailsActivity.this);
             recyclerView.setAdapter(recyclerViewAdapter);
             recyclerView.setHasFixedSize(true);
             recyclerView.setItemAnimator(new DefaultItemAnimator());

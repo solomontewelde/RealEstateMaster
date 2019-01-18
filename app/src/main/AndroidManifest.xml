@@ -24,7 +24,7 @@
             android:theme="@style/AppTheme"
           />
         <activity
-            android:name=".activities.LoginSignUpPage"
+            android:name=".activities.LoginActivity"
             android:label="Login"
             android:theme="@style/AppTheme">
             <intent-filter>
@@ -34,9 +34,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.Main2Activity" />
-        <activity android:name=".activities.ResultsActivity" />
-        <activity android:name=".activities.DetailActivity" />
+        <activity android:name=".activities.SearchResultsActivity" />
+        <activity android:name=".activities.PropertyDetailsActivity"
+            >
+
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"

@@ -4,13 +4,15 @@ package com.example.android.realestatemaster.utils;
  * Created by 100043392 on 17-Apr-18.
  */
 
-public class QuerryBuilder {
+public class SearchQuerryBuilder {
     private String area,minPrice,maxPrice,minBeds,maxBeds,propertyType,includeNewHomes,keywords,listing_id,radius,orderBy,listingStatus,pageSize,pageNumber,includeChainFreeHomes, includeSoldHomes;
     private String country,county,street,postCode;
     private String sharedAccomodation,letAgreed;
+    final String API_LOCATION = "http://api.zoopla.co.uk/api/v1/property_listings.json?";
+    final String API_KEY = "w88jr4f54ba5e4pd4xmfy8ud";
  
 
-    public QuerryBuilder() {
+    public SearchQuerryBuilder() {
         this.area = "oxford";
         this.minPrice = "";
         this.maxPrice = "";
@@ -32,6 +34,7 @@ public class QuerryBuilder {
         this.includeChainFreeHomes = "";
         this.sharedAccomodation = "";
         this.letAgreed = "";
+
     }
 
     public String getArea() {
@@ -208,22 +211,26 @@ public class QuerryBuilder {
     }
     
     public String getQuerryString(){
-        final String API_LOCATION = "http://api.zoopla.co.uk/api/v1/property_listings.json?";
-        final String API_KEY = "w88jr4f54ba5e4pd4xmfy8ud";
-        String querryString = API_LOCATION +"&api_key="+API_KEY+"&country="+this.getCountry()+"&county="+this.getCounty()+"&street="+this.getStreet()+"&postcode="+this.getPostCode()+
+
+        String queryString = API_LOCATION +"&api_key="+API_KEY+"&country="+this.getCountry()+"&county="+this.getCounty()+"&street="+this.getStreet()+"&postcode="+this.getPostCode()+
                 "&area=" + this.getArea() + "&maximum_price=" + this.getMaxPrice() + "&minimum_price=" + this.getMinPrice() +
                 "&minimum_beds=" + this.getMinBeds() + "&maximum_beds=" + this.getMaxBeds() + "&property_type=" + this.getPropertyType()+ "&keywords=" + this.getKeywords() + "&radius="+
                 this.getRadius() + "&order_by=" + this.getOrderBy() + "&listing_status=" + this.getListingStatus()+
                 "&page_size="+this.getPageSize()+"&page_number="+this.getPageNumber();
                 if(this.listingStatus.equalsIgnoreCase("sale")){
-                    querryString+= "&new_homes=" + this.getIncludeNewHomes()+"&chain_free="+this.getIncludeChainFreeHomes()+"&include_sold="+this.getIncludeSoldHomes();
+                    queryString+= "&new_homes=" + this.getIncludeNewHomes()+"&chain_free="+this.getIncludeChainFreeHomes()+"&include_sold="+this.getIncludeSoldHomes();
                 }
                 else if(this.listingStatus.equalsIgnoreCase("rent")){
-                    querryString+= "&shared_accomodation="+this.getSharedAccomodation()+"&let_agreed="+this.getLetAgreed();
+                    queryString+= "&shared_accomodation="+this.getSharedAccomodation()+"&let_agreed="+this.getLetAgreed();
                 }
               
-        return querryString;
+        return queryString;
     }
+    public String queryByListingId(String listing_id){
+        String queryString = API_LOCATION +"&api_key="+API_KEY+"&listing_id="+listing_id;
+        return queryString;
+    }
+
  
 
  

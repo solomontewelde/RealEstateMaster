@@ -9,17 +9,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.android.realestatemaster.R;
 import com.example.android.realestatemaster.utils.GsonModel.ErrorJsonModel;
+import com.example.android.realestatemaster.utils.GsonModel.Listing;
 import com.example.android.realestatemaster.utils.GsonModel.ProportyJsonModel;
 import com.example.android.realestatemaster.utils.UniversalImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+
+import okhttp3.internal.Util;
 
 
-public class RecylerViewAdapterFavorites extends RecyclerView.Adapter<RecylerViewAdapterFavorites.ViewHolder> {
+public class RecyclerViewAdapterFavorites extends RecyclerView.Adapter<RecyclerViewAdapterFavorites.ViewHolder> {
     private Context context;
-    private ProportyJsonModel data;
-    private ErrorJsonModel errorData;
+    private ArrayList<Listing> listings;
     private OnItemClickListener onItemClickListener;
     public interface OnItemClickListener{
         void onItemClick(int clickedItemIndex);
@@ -27,11 +30,9 @@ public class RecylerViewAdapterFavorites extends RecyclerView.Adapter<RecylerVie
     public void setOnItemClickListener(OnItemClickListener listener){
         onItemClickListener = listener;
     }
-    public RecylerViewAdapterFavorites(Context context, ProportyJsonModel data, ErrorJsonModel errorData){
+    public RecyclerViewAdapterFavorites(Context context, ArrayList<Listing> listings){
         this.context = context;
-        this.data = data;
-        this.errorData = errorData;
-
+        this.listings = listings;
     }
 
 
@@ -47,23 +48,23 @@ public class RecylerViewAdapterFavorites extends RecyclerView.Adapter<RecylerVie
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         DecimalFormat decimalFormat = new DecimalFormat("#,###,###");
-        String priceFormatString = decimalFormat.format(Double.parseDouble(data.getListing().get(position).getPrice()));
-        String originalShortDesc = data.getListing().get(position).getShortDescription();
+        String priceFormatString = decimalFormat.format(Double.parseDouble(listings.get(position).getPrice()));
+        String originalShortDesc = listings.get(position).getShortDescription();
         if (priceFormatString.equals("0")){
-            holder.priceTv.setText(data.getListing().get(position).getPriceModifier());
+            holder.priceTv.setText(listings.get(position).getPriceModifier());
         }
         else{
             holder.priceTv.setText("£ "+priceFormatString);
         }
         holder.shortDescriptionTv.setText( originalShortDesc.startsWith("<p")?originalShortDesc.substring(15):originalShortDesc);
-        holder.bedroomTv.setText(data.getListing().get(position).getNumBedrooms());
-        holder.bathroomTv.setText(data.getListing().get(position).getNumBathrooms());
-        holder.addressTv.setText(data.getListing().get(position).getDisplayableAddress());
-        holder.datePostedTv.setText(data.getListing().get(position).getFirstPublishedDate());
+        holder.bedroomTv.setText(listings.get(position).getNumBedrooms());
+        holder.bathroomTv.setText(listings.get(position).getNumBathrooms());
+        holder.addressTv.setText(listings.get(position).getDisplayableAddress());
+        holder.datePostedTv.setText(listings.get(position).getFirstPublishedDate());
 
 
-        String proportyImageUrl = data.getListing().get(position).getImageUrl();
-        String agentLogoUrl = data.getListing().get(position).getAgentLogo();
+        String proportyImageUrl = listings.get(position).getImageUrl();
+        String agentLogoUrl = listings.get(position).getAgentLogo();
         initImageLoader();
         setProportyImage(proportyImageUrl, holder.proportyImage);
         setProportyImage(agentLogoUrl, holder.agentLogoImage);
@@ -72,8 +73,10 @@ public class RecylerViewAdapterFavorites extends RecyclerView.Adapter<RecylerVie
 
     @Override
     public int getItemCount() {
-
-        return data==null||data.getListing()==null?0:data.getListing().size();      //return if data in null
+if (listings.size()==0){
+    Utilities.showToast(context,"Nothing to show");
+}
+        return listings==null?0:listings.size();      //return if data in null
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
