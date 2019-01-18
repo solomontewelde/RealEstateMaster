@@ -24,12 +24,12 @@ private FirebaseAuth firebaseAuth;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        emailEt = findViewById(R.id.emailEt);
-        passwordEt = findViewById(R.id.passwordEt);
+        emailEt = findViewById(R.id.email);
+        passwordEt = findViewById(R.id.password);
         firebaseAuth = FirebaseAuth.getInstance();
 
     }
-    public void signUp(View view){
+    public void register(View view){
         String email = emailEt.getText().toString();
         String password = passwordEt.getText().toString();
         if (TextUtils.isEmpty(email)) {
@@ -54,9 +54,15 @@ private FirebaseAuth firebaseAuth;
                 }
                 else{
                     startActivity(new Intent(getApplicationContext(),LoginSignUpPage.class));
-                    finish();
+                    //finish();
+
                 }
             }
         });
+    }
+
+    public void gotoLoginPage(View view) {
+        startActivity(new Intent(getApplicationContext(),LoginSignUpPage.class));
+        finish();
     }
 }

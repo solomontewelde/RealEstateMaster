@@ -21,7 +21,8 @@
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/title_activity_search"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme"
+          />
         <activity
             android:name=".activities.LoginSignUpPage"
             android:label="Login"
@@ -32,11 +33,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--
-        <activity android:name=".activities.SearchFilterActivity">
 
-        </activity>
-        -->
         <activity android:name=".activities.Main2Activity" />
         <activity android:name=".activities.ResultsActivity" />
         <activity android:name=".activities.DetailActivity" />
