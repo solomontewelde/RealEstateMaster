@@ -209,7 +209,7 @@ public class QuerryBuilder {
     
     public String getQuerryString(){
         final String API_LOCATION = "http://api.zoopla.co.uk/api/v1/property_listings.json?";
-        final String API_KEY = "w88jr4f54ba5e4pd4xmfy8ud";
+        final String API_KEY = ""; //put api key provided by zoopla
         String querryString = API_LOCATION +"&api_key="+API_KEY+"&country="+this.getCountry()+"&county="+this.getCounty()+"&street="+this.getStreet()+"&postcode="+this.getPostCode()+
                 "&area=" + this.getArea() + "&maximum_price=" + this.getMaxPrice() + "&minimum_price=" + this.getMinPrice() +
                 "&minimum_beds=" + this.getMinBeds() + "&maximum_beds=" + this.getMaxBeds() + "&property_type=" + this.getPropertyType()+ "&keywords=" + this.getKeywords() + "&radius="+
